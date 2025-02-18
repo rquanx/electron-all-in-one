@@ -1,10 +1,10 @@
-import Versions from './components/Versions'
 import electronLogo from './assets/electron.svg'
 function App() {
   const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
 
   return (
     <>
+      <div className="bg-red-600">123123123</div>
       <img alt="logo" className="logo" src={electronLogo} />
       <div className="creator">Powered by electron-vite</div>
       <div className="text">
@@ -26,7 +26,6 @@ function App() {
           </a>
         </div>
       </div>
-      <Versions></Versions>
     </>
   )
 }
