@@ -9,7 +9,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   main: {
-    plugins: [externalizeDepsPlugin()]
+    plugins: [externalizeDepsPlugin({ exclude: ['electron-debug'] })]
   },
   preload: {
     plugins: [externalizeDepsPlugin()]
