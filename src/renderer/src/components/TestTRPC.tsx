@@ -1,5 +1,6 @@
 import { useTRPC } from '@renderer/utils/trpc'
 import { useMutation, useQuery } from '@tanstack/react-query'
+import { Button } from './ui/button'
 
 export const TestButton = () => {
   const trpc = useTRPC()
@@ -7,12 +8,12 @@ export const TestButton = () => {
   const ping = useMutation(trpc.user.testMutation.mutationOptions())
 
   return (
-    <button
+    <Button
       onClick={() => {
         ping.mutate()
       }}
     >
       test {data}
-    </button>
+    </Button>
   )
 }

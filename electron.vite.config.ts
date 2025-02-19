@@ -9,7 +9,13 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   main: {
-    plugins: [externalizeDepsPlugin({ exclude: ['electron-debug'] })]
+    plugins: [externalizeDepsPlugin({ exclude: ['electron-debug', 'electron-store'] })],
+    resolve: {
+      alias: {
+        '@main': resolve('src/main'),
+        '@share': resolve('src/share')
+      }
+    }
   },
   preload: {
     plugins: [externalizeDepsPlugin()]
@@ -17,7 +23,8 @@ export default defineConfig({
   renderer: {
     resolve: {
       alias: {
-        '@renderer': resolve('src/renderer/src')
+        '@renderer': resolve('src/renderer/src'),
+        '@share': resolve('src/share')
       }
     },
     plugins: [

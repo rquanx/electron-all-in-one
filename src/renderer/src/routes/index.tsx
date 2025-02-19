@@ -1,3 +1,5 @@
+import { TestStoreButton } from '@renderer/components/TestStore'
+import { TestButton } from '@renderer/components/TestTRPC'
 import { Button } from '@renderer/components/ui/button'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import log from 'electron-log/renderer'
@@ -18,6 +20,8 @@ function Index() {
       >
         log
       </Button>
+      <TestButton />
+      <TestStoreButton />
     </div>
   )
 }
