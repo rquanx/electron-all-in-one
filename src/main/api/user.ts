@@ -1,4 +1,5 @@
 import { authProcedure, publicProcedure, router } from './base'
+import log from 'electron-log/main'
 
 export const user = router({
   login: publicProcedure.mutation(() => {
@@ -11,6 +12,7 @@ export const user = router({
   }),
   testMutation: publicProcedure.mutation(() => {
     console.log('testmutation')
+    log.info('test main log')
     return 'testmutation'
   })
 })

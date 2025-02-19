@@ -4,10 +4,7 @@ import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 import { createIPCHandler } from 'trpc-electron/main'
 import { appRouter } from './api'
-import debug from 'electron-debug'
-
-debug()
-
+import './init'
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
