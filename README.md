@@ -1,4 +1,4 @@
-# shopee-toolkit
+# electron all in one
 
 An Electron application with React and TypeScript
 
