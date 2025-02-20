@@ -1,17 +1,12 @@
+import { trpc } from '@renderer/utils/trpc/vanilla'
 import { QueryClientProvider } from '@tanstack/react-query'
-import { createTRPCClient } from '@trpc/client'
 import { PropsWithChildren, useState } from 'react'
-import { ipcLink } from 'trpc-electron/renderer'
-import type { AppRouter } from '../../../main/api'
 import { getQueryClient } from '../utils/react-query'
-import { TRPCProvider } from '../utils/trpc'
+import { TRPCProvider } from '../utils/trpc/react'
 
 function App({ children }: PropsWithChildren) {
   const queryClient = getQueryClient()
-  const [trpcClient] = useState(() =>
-    createTRPCClient<AppRouter>({
-      links: [ipcLink()]
-    })
+  const [trpcClient] = useState(() => trpc
   )
   return (
     <QueryClientProvider client={queryClient}>

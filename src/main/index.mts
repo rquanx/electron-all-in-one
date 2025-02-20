@@ -5,6 +5,7 @@ import icon from '../../resources/icon.png?asset'
 import { createIPCHandler } from 'trpc-electron/main'
 import { appRouter } from './api'
 import './init'
+import { fileURLToPath } from 'url'
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -14,7 +15,7 @@ function createWindow(): void {
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
-      preload: join(__dirname, '../preload/index.js'),
+      preload: fileURLToPath(new URL('../preload/index.mjs', import.meta.url)),
       sandbox: false
     }
   })

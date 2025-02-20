@@ -1,4 +1,4 @@
-import { useTRPC } from '@renderer/utils/trpc'
+import { useTRPC } from '@renderer/utils/trpc/react'
 import { useMutation } from '@tanstack/react-query'
 
 export const useStore = () => {

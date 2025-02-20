@@ -1,4 +1,4 @@
-import { useTRPC } from '@renderer/utils/trpc'
+import { useTRPC } from '@renderer/utils/trpc/react'
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { Button } from './ui/button'
 
