@@ -6,6 +6,8 @@ import { createIPCHandler } from 'trpc-electron/main'
 import { appRouter } from './api'
 import './init'
 import { fileURLToPath } from 'url'
+import 'dotenv/config'
+
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
